@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TEST</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Dangrek&display=swap" rel="stylesheet">
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            font-family: 'Dangrek', serif;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        header {
+            height: 100vh;
+            background-image: url('https://r4.wallpaperflare.com/wallpaper/935/711/646/hoshimachi-suisei-hololive-hd-wallpaper-8603b79a8b3a0ec4d685ae21bce9367b.jpg');
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-size: cover;
+            background-position: center center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            color: #FF4000;
+            font-size: 10vw; /* responsif di mobile */
+            opacity: 0;
+            animation: fadeInOut 3s infinite;
+            text-align: center;
+        }
+
+        @keyframes fadeInOut {
+            0% {
+                opacity: 1; 
+            }
+            50% {
+                opacity: 0; 
+            }
+            100% {
+                opacity: 1; 
+            }
+        }
+
+        .main {
+            width: 90%;
+            max-width: 100%;
+            margin: 10px 5% 0 5%;
+            font-size: 1.4em;
+            line-height: 1.4em;
+            background-color: #eee;
+            height: 100vh;
+        }
+
+        .main p {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>TEST</h1>
+    </header>
+
+    <audio id="bgm" loop>
+        <source src="https://od.lk/s/NzdfNjA4NTk4NDRf/comet.mp3" type="audio/mp3" />
+    </audio>
+
+    <script>
+        // Play audio setelah klik pertama
+        window.addEventListener('click', function () {
+            const audio = document.getElementById('bgm');
+            if (audio.paused) {
+                audio.play().catch(err => console.log("Autoplay blocked or error:", err));
+            }
+        }, { once: true });
+    </script>
+
+</body>
+</html>
